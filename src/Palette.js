@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import seedColors from './seedColors';
+import ColorBox from './ColorBox';
+import './Palette.css'
 
 class Palette extends Component {
   constructor(props) {
@@ -14,9 +15,15 @@ class Palette extends Component {
           {/* Navbar  */}
           <div className="Palette-colors">
             {/* Color boxes */}
+            {
+              this.props.colors.map(color => (
+                <ColorBox {...color}/>
+
+              ))
+            }
           </div>
           {/* Footer */}
-          
+
         </div>
       </div>
     );
